@@ -1,0 +1,28 @@
+{
+    "name": "fetch-avatar",
+    "version": "1.0.0",
+    "description": "A package to fetch avatars from multiple providers",
+    "main": "index.js",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.9",
+        "crypto": "^1.0.1",
+        "discord.js": "^12.5.3"
+    },
+    "devDependencies": {
+        "@types/node": "^15.6.0",
+        "typescript": "^4.2.4"
+    },
+    "scripts": {
+        "test": "ts-node  test.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DrKain/fetch-avatar.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DrKain/fetch-avatar/issues"
+    },
+    "homepage": "https://github.com/DrKain/fetch-avatar#readme"
+}
