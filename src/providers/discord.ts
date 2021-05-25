@@ -1,38 +1,29 @@
-import { Client, ImageSize } from 'discord.js';
+const fetch = require('node-fetch');
+const ENV_VAR = 'FA_DISCORD';
 
-const client = new Client();
-let ready = false;
+const fetchUser = async (id: string) => {
+    let avatar = null;
 
-const logoutTimer = () => {
-    setTimeout(() => {
-        client.destroy();
-        ready = false;
-    }, 60_000);
+    try {
+        const token = process.env[ENV_VAR];
+        const data = await fetch(`https://discord.com/api/v8/users/${id}`, {
+            headers: { Authorization: `Bot ${token}` }
+        });
+        const json = JSON.parse(await data.text());
+
+        if (json.avatar) avatar = `https://cdn.discordapp.com/avatars/${id}/${json.avatar}.png`;
+    } catch (error) {}
+
+    return avatar;
 };
 
-export const discord = (id: string, size: ImageSize = 256): Promise<string | null> => {
+export const discord = (id: string): Promise<string | null> => {
     return new Promise(async (resolve) => {
-        if (!process.env.DISCORD_TOKEN) {
-            console.log('env.DISCORD_TOKEN not set');
+        if (!process.env[ENV_VAR]) {
+            console.log(`env.${ENV_VAR} not set`);
             return resolve(null);
         }
 
-        if (!ready) await login();
-
-        const user = await client.users.fetch(id);
-        if (user) return resolve(user.avatarURL({ format: 'png', dynamic: true, size }));
-        else return null;
+        resolve(await fetchUser(id));
     });
 };
-
-const login = () => {
-    return new Promise((resolve) => {
-        client.on('ready', () => {
-            logoutTimer();
-            resolve((ready = true));
-        });
-        client.login(process.env.DISCORD_TOKEN);
-    });
-};
-
-if (process.env.DISCORD_TOKEN) login();
