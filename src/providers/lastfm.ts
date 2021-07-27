@@ -1,4 +1,4 @@
-import cheerio from 'cheerio/lib/cheerio';
+import * as cheerio from 'cheerio';
 import { loadPage } from '../helper';
 
 // Default avatar, return null if it's this

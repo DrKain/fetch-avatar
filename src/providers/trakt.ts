@@ -1,4 +1,4 @@
-import cheerio from 'cheerio/lib/cheerio';
+import * as cheerio from 'cheerio';
 import { loadPage } from '../helper';
 
 export const trakt = (username: string, size: number = 0): Promise<string | null> => {
