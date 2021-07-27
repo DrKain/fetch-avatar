@@ -18,8 +18,8 @@ If the user has an avatar you'll receive a URL, otherwise the response will be `
 ```ts
 import { avatar } from 'fetch-avatar';
 
-avatar.github('DrKain').then(console.log); // https://avatars.githubusercontent.com/u/5300315
-avatar.discord('bad_id').then(console.log); // null
+avatar.github('DrKain').then(console.log);
+// https://avatars.githubusercontent.com/u/5300315
 ```
 
 ### API Keys:
@@ -45,10 +45,10 @@ avatar.discord('306861289609887755').then(console.log);
 -   [x] [GitHub](https://github.com/)
 -   [x] [GitLab](https://about.gitlab.com/)
 -   [x] [Gravatar](https://en.gravatar.com/)
+-   [x] [Last.FM](https://www.last.fm/)
 
 #### Planned:
 
--   [ ] [Last.FM](https://www.last.fm)
 -   [ ] [Trakt.tv](https://trakt.tv)
 -   [ ] [Spotify](https://open.spotify.com)
 -   [ ] [Youtube](https://youtube.com)
