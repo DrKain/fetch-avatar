@@ -40,7 +40,7 @@ avatar.discord('306861289609887755').then(console.log);
 #### Supported:
 
 -   [x] [DeviantArt](https://www.deviantart.com/)
--   [x] [Discord](https://discord.com/) - Token Required
+-   [x] [Discord](https://discord.com/) - [Token Required](https://github.com/DrKain/fetch-avatar/wiki/Discord#bot-token)
 -   [x] [FurAffinity](https://www.furaffinity.net/)
 -   [x] [GitHub](https://github.com/)
 -   [x] [GitLab](https://about.gitlab.com/)
