@@ -10,7 +10,7 @@ export const discord = (id: string, size: DiscordSizes = '256'): Promise<null | 
 
         if (!token) {
             log('discord token not set using config.set');
-            resolve(null);
+            return resolve(null);
         }
 
         try {
