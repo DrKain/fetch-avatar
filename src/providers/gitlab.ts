@@ -1,11 +1,10 @@
 import { loadPage } from '../helper';
 import * as cheerio from 'cheerio';
-import { get } from 'https';
 
 export const gitlab = (username: string, size: number = 0): Promise<string | null> => {
     return new Promise(async (resolve) => {
         try {
-            const body = await loadPage(`https://gitlab.com/${username}`);
+            const { body } = await loadPage(`https://gitlab.com/${username}`);
             const $ = cheerio.load(body);
 
             if ($('title').text().includes('Not Found')) return resolve(null);

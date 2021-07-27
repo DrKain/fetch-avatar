@@ -4,7 +4,7 @@ import { loadPage } from '../helper';
 export const furaffinity = (username: string): Promise<string | null> => {
     return new Promise(async (resolve) => {
         try {
-            const body = await loadPage(`https://www.furaffinity.net/user/${username}`);
+            const { body } = await loadPage(`https://www.furaffinity.net/user/${username}`);
             const $ = cheerio.load(body);
 
             if ($('title').text().includes('System Error')) return resolve(null);

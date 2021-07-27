@@ -1,29 +1,28 @@
-const fetch = require('node-fetch');
-const ENV_VAR = 'FA_DISCORD';
+import { config } from '../config';
+import { loadAPI, log } from '../helper';
 
-const fetchUser = async (id: string) => {
-    let avatar = null;
+type DiscordSizes = '16' | '32' | '64 ' | '128' | '256' | '512' | '1024' | '2048' | '4096';
 
-    try {
-        const token = process.env[ENV_VAR];
-        const data = await fetch(`https://discord.com/api/v8/users/${id}`, {
-            headers: { Authorization: `Bot ${token}` }
-        });
-        const json = JSON.parse(await data.text());
-
-        if (json.avatar) avatar = `https://cdn.discordapp.com/avatars/${id}/${json.avatar}.png`;
-    } catch (error) {}
-
-    return avatar;
-};
-
-export const discord = (id: string): Promise<string | null> => {
+export const discord = (id: string, size: DiscordSizes = '256'): Promise<null | string> => {
     return new Promise(async (resolve) => {
-        if (!process.env[ENV_VAR]) {
-            console.log(`env.${ENV_VAR} not set`);
-            return resolve(null);
+        let avatar = null;
+        const token = config.get('discord');
+
+        if (!token) {
+            log('discord token not set using config.set');
+            resolve(null);
         }
 
-        resolve(await fetchUser(id));
+        try {
+            const url = `https://discord.com/api/v8/users/${id}`;
+            const text = await loadAPI(url, { Authorization: `Bot ${token}` });
+            const json = JSON.parse(text);
+
+            if (json.avatar) avatar = `https://cdn.discordapp.com/avatars/${id}/${json.avatar}.png?size=${size}`;
+        } catch (error) {
+            log(`${error}`);
+        }
+
+        resolve(avatar);
     });
 };
