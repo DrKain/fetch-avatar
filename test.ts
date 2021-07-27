@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 config.set('discord', process.env.DISCORD_TOKEN);
+config.set('spotify', process.env.SPOTIFY_TOKEN);
 
 // avatar.deviantart('username').then(console.log);
 // avatar.discord('306861289609887755').then(console.log);
@@ -13,3 +14,4 @@ config.set('discord', process.env.DISCORD_TOKEN);
 // avatar.gravatar('username@outlook.com').then(console.log);
 // avatar.lastfm('KainSir').then(console.log);
 // avatar.trakt('kainsir').then(console.log);
+avatar.spotify('hpox7s5zt397lu11zh3uk5dbv').then(console.log);

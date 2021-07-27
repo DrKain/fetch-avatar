@@ -5,4 +5,5 @@ export * from './furaffinity';
 export * from './gitlab';
 export * from './discord';
 export * from './lastfm';
+export * from './spotify';
 export * from './trakt';

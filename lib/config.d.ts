@@ -1,4 +1,4 @@
-export declare type TProviders = 'discord';
+export declare type TProviders = 'discord' | 'spotify';
 declare class Config {
     private store;
     /**

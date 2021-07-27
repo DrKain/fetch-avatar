@@ -1,5 +1,5 @@
 // These providers require an API key or token to function
-export type TProviders = 'discord';
+export type TProviders = 'discord' | 'spotify';
 
 class Config {
     private store: { [key: string]: string } = {};
