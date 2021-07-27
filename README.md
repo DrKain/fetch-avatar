@@ -55,7 +55,3 @@ avatar.discord('306861289609887755').then(console.log);
 -   [ ] [Pixiv](https://www.pixiv.net/en/)
 -   [ ] [Artstation](https://www.artstation.com/)
 <!---    [ ] []() -->
-
-```
-
-```
