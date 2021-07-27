@@ -46,10 +46,10 @@ avatar.discord('306861289609887755').then(console.log);
 -   [x] [GitLab](https://about.gitlab.com/)
 -   [x] [Gravatar](https://en.gravatar.com/)
 -   [x] [Last.FM](https://www.last.fm/)
+-   [x] [Trakt.tv](https://trakt.tv)
 
 #### Planned:
 
--   [ ] [Trakt.tv](https://trakt.tv)
 -   [ ] [Spotify](https://open.spotify.com)
 -   [ ] [Youtube](https://youtube.com)
 -   [ ] [Pixiv](https://www.pixiv.net/en/)

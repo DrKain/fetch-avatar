@@ -12,3 +12,4 @@ config.set('discord', process.env.DISCORD_TOKEN);
 // avatar.gitlab('ksir').then(console.log);
 // avatar.gravatar('username@outlook.com').then(console.log);
 // avatar.lastfm('KainSir').then(console.log);
+// avatar.trakt('kainsir').then(console.log);
