@@ -16,7 +16,11 @@ export const spotify = (user_id: string): Promise<string | null> => {
             const text = await loadAPI(url, { Authorization: `Bearer ${token}` });
             const json = JSON.parse(text);
 
-            if (json.status === 404) return resolve(null);
+            // Warn the user when an error is returned
+            if (json.error) {
+                log(JSON.stringify(json.error));
+                return resolve(null);
+            }
 
             const first = json.images.shift();
             if (first && first.url) avatar = first.url;
