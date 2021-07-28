@@ -15,4 +15,5 @@ config.set('spotify', process.env.SPOTIFY_TOKEN);
 // avatar.lastfm('KainSir').then(console.log);
 // avatar.trakt('kainsir').then(console.log);
 // avatar.spotify('hpox7s5zt397lu11zh3uk5dbv').then(console.log);
-avatar.steam('76561198073300219').then(console.log);
+// avatar.steam('76561198073300219').then(console.log);
+avatar.npmjs('dougwilson').then(console.log);

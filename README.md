@@ -40,6 +40,7 @@ This package will attempt to detect and remove default avatars from providers. I
 -   [x] [GitLab](https://about.gitlab.com/)
 -   [x] [Gravatar](https://en.gravatar.com/)
 -   [x] [Last.FM](https://www.last.fm/)
+-   [x] [NPM](https://www.npmjs.com)
 -   [x] [Spotify](https://open.spotify.com) - [Token Required](https://github.com/DrKain/fetch-avatar/wiki/Spotify#oauth-token)
 -   [x] [Steam](https://steamcommunity.com)
 -   [x] [Trakt.tv](https://trakt.tv)
