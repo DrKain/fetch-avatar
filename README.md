@@ -25,17 +25,11 @@ avatar.github('DrKain').then(console.log);
 ### API Keys:
 
 Some providers will require an API to function. I've tried to avoid this best I can but sometimes it's unavoidable.
-When a provider requires an API Key or token, simple set it in the config:
+When a provider requires an API key. Please visit the GitHub [wiki](https://github.com/DrKain/fetch-avatar/wiki) to see how to use these. Each provider that requires an API key or token has their own page showing how to get one.
 
-```js
-import { avatar, config } from 'fetch-avatar';
+### Default Avatars
 
-// Set token
-config.set('discord', 'Your bot token here');
-
-// Ready to go
-avatar.discord('306861289609887755').then(console.log);
-```
+This package will attempt to detect and remove default avatars from providers. If a default avatar is detected the response will be `null`.
 
 #### Supported:
 
@@ -47,6 +41,7 @@ avatar.discord('306861289609887755').then(console.log);
 -   [x] [Gravatar](https://en.gravatar.com/)
 -   [x] [Last.FM](https://www.last.fm/)
 -   [x] [Spotify](https://open.spotify.com) - [Token Required](https://github.com/DrKain/fetch-avatar/wiki/Spotify#oauth-token)
+-   [x] [Steam](https://steamcommunity.com)
 -   [x] [Trakt.tv](https://trakt.tv)
 
 #### Planned:

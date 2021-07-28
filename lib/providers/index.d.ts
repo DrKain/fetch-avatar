@@ -6,4 +6,5 @@ export * from './gitlab';
 export * from './discord';
 export * from './lastfm';
 export * from './spotify';
+export * from './steam';
 export * from './trakt';
