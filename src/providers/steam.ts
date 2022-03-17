@@ -20,7 +20,7 @@ export const steam = (steam_id: string): Promise<string | null> => {
 
         // Load cheerio
         const $ = cheerio.load(body);
-        const avatar = $('.playerAvatar img').attr('src');
+        const avatar = $('.profile_header .playerAvatarAutoSizeInner > img').attr('src');
 
         // If avatar element couldn't be found
         if (!avatar) return resolve(null);
